@@ -3,7 +3,7 @@
         <section class="calendar">
             <h1 class="calendar__title">Upcoming</h1>
             <ul class="calendar__events">
-                <li v-for="event in events" class="calendar__event">
+                <li v-for="event in events" v-bind:key="event" class="calendar__event">
                     <h2 class="calendar__event__title">{{ event.name }}</h2>
                     <div class="calendar__event__date">{{ relativeDate(event.date) }}</div>
                 </li>
@@ -40,6 +40,7 @@
             getEventHandlers() {
                 return {
                     'Calendar.EventsFetched': response => {
+                        console.log(response)
                         this.events = response.events;
                     },
                 };

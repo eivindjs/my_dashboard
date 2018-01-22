@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/dashboard.spatie.be-master/'),
+    'url' => env('APP_URL', 'http://localhost/my_dashboard/'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Brussels',
+    'timezone' => 'Europe/Oslo',
 
     /*
     |--------------------------------------------------------------------------
