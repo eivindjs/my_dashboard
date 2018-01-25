@@ -23,6 +23,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Twitter\ListenForMentions::class,
         \App\Console\Components\Twitter\ListenForQuotes::class,
         \App\Console\Components\Twitter\SendFakeTweet::class,
+        \App\Console\Components\Yr\FetchWeatherData::class,
         UpdateDashboard::class,
     ];
 

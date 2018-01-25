@@ -15,7 +15,7 @@
     <tasks team-member="seb" position="c3"></tasks>
     <tasks team-member="willem" position="d3"></tasks>
     --}}
-
+    <yr position="a1"></yr>
     <calendar position="f2:f3"></calendar>
     <time-weather position="e1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Levanger"></time-weather>
     <time-weather position="f1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Trondheim"></time-weather>
