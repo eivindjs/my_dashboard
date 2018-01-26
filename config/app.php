@@ -173,6 +173,11 @@ return [
         App\Providers\CollectionServiceProvider::class,
         Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiServiceProvider::class,
         App\Services\GitHub\GitHubServiceProvider::class,
+
+        /**
+         * Installed afterwards
+         */
+        Orchestra\Parser\XmlServiceProvider::class,
     ],
 
     /*
@@ -221,6 +226,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
+        'XmlParser' => Orchestra\Parser\Xml\Facade::class,
     ],
 
 ];
