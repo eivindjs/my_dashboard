@@ -4,7 +4,7 @@ namespace App\Events\Yr;
 
 use App\Events\DashboardEvent;
 
-class Weather extends DashboardEvent
+class YrDataFetched extends DashboardEvent
 {
     /** @var array */
     public $weather;

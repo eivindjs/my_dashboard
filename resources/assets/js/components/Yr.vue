@@ -31,7 +31,7 @@
         methods: {
             getEventHandlers() {
                 return {
-                    'Yr.FetchWeatherData': response => {
+                    'Yr.YrDataFetched': response => {
                         console.log("hei");
                         console.log(response);
                         this.temperature = response.weather.temperature;
@@ -42,7 +42,7 @@
 
             getSaveStateConfig() {
                 return {
-                    cacheKey: `yr-${this.temperature}`,
+                    cacheKey: `yr`,
                 };
             },
         },

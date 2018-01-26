@@ -6,7 +6,7 @@ use DateTime;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use Illuminate\Support\ServiceProvider;
-use App\Events\Yr\Weather;
+use App\Events\Yr\YrDataFetched;
 
 use Storage;
 
@@ -36,7 +36,7 @@ class FetchWeatherData extends Command
                 $yr_data->temperature = $time->temperature['value'];
             }
         }
-        event(new Weather(array('temperature' => 3)));
+        event(new YrDataFetched(array('temperature' => 3)));
        
     }
 }
