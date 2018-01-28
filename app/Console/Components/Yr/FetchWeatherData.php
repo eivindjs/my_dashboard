@@ -20,23 +20,27 @@ class FetchWeatherData extends Command
 
     public function handle()
     {
-        //$yr_xml = file_get_contents($this->xml_link);
-        $yr_xml =  Storage::get('yr_data.xml');
+        $yr_xml = file_get_contents($this->xml_link);
+        //$yr_xml =  Storage::get('yr_data.xml');
         $yr_xml = new \SimpleXMLElement($yr_xml);
         $now = Carbon::now()->format('Y-m-d H:i');
-        //Storage::disk('local')->put('file.xml', print_r($yr_xml,true));
+        //Storage::disk('local')->put('yr_data.xml',$yr_xml);
         //$yr_xml = simplexml_load_string($yr_xml);
-        $yr_data = collect();
+        $yr_data = array();
         foreach($yr_xml->forecast->tabular->time as $time){
             $from_time = Carbon::parse($time['from'])->format('Y-m-d H:i');
             $to_time = Carbon::parse($time['to'])->format('Y-m-d H:i');
-            if($now >= $from_time && $now <= $to_time){
-                $yr_data->symbol =  $time->symbol['var'];
-                $yr_data->text = $time->symbol['name'];
-                $yr_data->temperature = $time->temperature['value'];
-            }
+            $to_time_midnight = Carbon::parse($time['to'])->format('H:i');
+
+            //if(($now >= $from_time) && ($now <= $to_time || $to_time == '00:00')){ //Denne må sees på kan være fra idag til og med kl 00:00 dagen etterpå
+                $yr_data['symbol'] =  'dist/svg/'.strval($time->symbol['var']).'.svg';
+                $yr_data['text'] = "Levanger: " . strval($time->symbol['name']);
+                $yr_data['temperature'] = strval($time->temperature['value']);
+            //}
+            break;
         }
-        event(new YrDataFetched(array('temperature' => 3)));
+        
+        event(new YrDataFetched($yr_data));
        
     }
 }

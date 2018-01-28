@@ -40,6 +40,7 @@
                 return {
                     'InternetConnection.Heartbeat': () => {
                         this.lastHeartBeatReceivedAt = moment();
+                        console.log(this.lastHeartBeatReceivedAt);
                     },
                 };
             },

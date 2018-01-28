@@ -27,7 +27,13 @@ class FetchCalendarEvents extends Command
             })
             ->unique('name')
             ->toArray();
-
+        /*
+        $events = array();
+        $events[] = array(
+            'name' => 'Testing',
+            'date' => Carbon::now()->format('Y-m-d H:i:s')
+        );*/
+        
         event(new EventsFetched($events));
     }
 }

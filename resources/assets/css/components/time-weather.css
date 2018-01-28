@@ -30,6 +30,11 @@
     font-size: var(--font-size-xs);
 }
 
+.time-weather__img {
+    width: 30px;
+    height: 35px;
+}
+
 .time-weather__date {
     display: none;
     color: var(--gray-light);

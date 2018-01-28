@@ -178,6 +178,7 @@ return [
          * Installed afterwards
          */
         Orchestra\Parser\XmlServiceProvider::class,
+        Arturgrigio\GoogleCalendar\GoogleCalendarServiceProvider::class,
     ],
 
     /*
@@ -227,6 +228,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
         'XmlParser' => Orchestra\Parser\Xml\Facade::class,
+        'GoogleCalendar' => Arturgrigio\GoogleCalendar\GoogleCalendarFacade::class,
     ],
 
 ];

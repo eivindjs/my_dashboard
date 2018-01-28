@@ -17,10 +17,10 @@
     --}}
 
     <calendar position="a2:a3"></calendar>
-    <time-weather position="a1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Levanger"></time-weather>
-    <time-weather position="b1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Trondheim"></time-weather>
-    <yr position="b2"></yr>
-    <!--<internet-connection></internet-connection>-->
+    <!--<time-weather position="a1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Levanger"></time-weather>-->
+    <!--<time-weather position="b1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Trondheim"></time-weather>-->
+    <yr position="a1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo"></yr>
+    <internet-connection></internet-connection>
 </dashboard>
 
 @endsection

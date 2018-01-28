@@ -10,6 +10,7 @@
     "require": {
         "php": ">=7.0.0",
         "ext-simplexml": "^7.1",
+        "arturgrigio/google-laravel-calendar-2": "^1.1",
         "barryvdh/laravel-ide-helper": "^2.1",
         "developmint/npm-stats-api": "^1.0",
         "erusev/parsedown": "^1.6",
