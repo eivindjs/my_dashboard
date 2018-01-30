@@ -179,6 +179,7 @@ return [
          */
         Orchestra\Parser\XmlServiceProvider::class,
         Arturgrigio\GoogleCalendar\GoogleCalendarServiceProvider::class,
+        Grambas\FootballData\FootballDataServiceProvider::class,
     ],
 
     /*
@@ -229,6 +230,7 @@ return [
         'TwitterStreamingApi' => Spatie\LaravelTwitterStreamingApi\TwitterStreamingApiFacade::class,
         'XmlParser' => Orchestra\Parser\Xml\Facade::class,
         'GoogleCalendar' => Arturgrigio\GoogleCalendar\GoogleCalendarFacade::class,
+        'Football' => Grambas\FootballData\Facades\FootballDataFacade::class,
     ],
 
 ];

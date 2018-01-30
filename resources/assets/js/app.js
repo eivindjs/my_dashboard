@@ -3,6 +3,10 @@ import './bootstrap.js';
 import Echo from 'laravel-echo';
 import Vue from 'vue';
 
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
+
 import Dashboard from './components/Dashboard';
 import Calendar from './components/Calendar';
 import Github from './components/Github';
@@ -15,6 +19,8 @@ import TimeWeather from './components/TimeWeather';
 import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Yr from './components/Yr';
+import PremierLeague from './components/PremierLeague';
+
 
 new Vue({
 
@@ -33,6 +39,7 @@ new Vue({
         Twitter,
         Uptime,
         Yr,
+        PremierLeague
     },
 
     created() {
