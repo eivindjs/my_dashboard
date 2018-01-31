@@ -17,6 +17,7 @@
     --}}
 
     <premier-league position="b1:c1"></premier-league>
+    <team-united position="b2:b3"></team-united>
     <calendar position="a2:a3"></calendar>
     <!--<time-weather position="a1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Levanger"></time-weather>-->
     <!--<time-weather position="b1" date-format="ddd DD.MM.YYYY" time-zone="Europe/Oslo" weather-city="Trondheim"></time-weather>-->

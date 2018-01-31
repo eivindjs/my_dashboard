@@ -21,16 +21,14 @@ class FetchLeagueTable extends Command
     public function handle()
     {
      
-        $league_table =  json_decode(Storage::get('league.json'));
-        //$league_table = Football::LeagueTable(445);
-        //Storage::disk('local')->put('league.json',$league_table->standing);
+        //$league_table =  json_decode(Storage::get('league.json'));
+        $league_table = Football::LeagueTable(445);
         $table = array();
         foreach($league_table->standing as $team){
             $table[] = $team;
             if($team->position === 6)
                 break;
         }
-        //dump($table);
         event(new DataFetched($table));
     }
 }

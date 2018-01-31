@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Components\Twitter\SendFakeTweet::class,
         \App\Console\Components\Yr\FetchWeatherData::class,
         \App\Console\Components\Fotball\FetchLeagueTable::class,
+        \App\Console\Components\FotballTeam\FetchUnitedData::class,
         UpdateDashboard::class,
     ];
 
@@ -38,5 +39,6 @@ class Kernel extends ConsoleKernel
         //$schedule->command('dashboard:fetch-packagist-totals')->hourly();
         //$schedule->command('dashboard:fetch-npm-totals')->hourly();
         $schedule->command('dashboard:fetch-yr-data')->hourly();
+        $schedule->command('dashboard:fetch-league-table')->daily();
     }
 }

@@ -20,6 +20,7 @@ import Twitter from './components/Twitter';
 import Uptime from './components/Uptime';
 import Yr from './components/Yr';
 import PremierLeague from './components/PremierLeague';
+import TeamUnited from './components/TeamUnited';
 
 
 new Vue({
@@ -39,7 +40,8 @@ new Vue({
         Twitter,
         Uptime,
         Yr,
-        PremierLeague
+        PremierLeague,
+        TeamUnited
     },
 
     created() {
