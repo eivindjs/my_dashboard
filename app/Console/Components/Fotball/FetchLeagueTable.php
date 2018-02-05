@@ -26,7 +26,7 @@ class FetchLeagueTable extends Command
         $table = array();
         foreach($league_table->standing as $team){
             $table[] = $team;
-            if($team->position === 6)
+            if($team->position === 8)
                 break;
         }
         event(new DataFetched($table));

@@ -13,10 +13,11 @@
                 <th>MF</th>
                 <th>+</th>
                 <th>-</th>
+                <th>P</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="item in pl_leaguetable" >
+            <tr v-for="item in pl_leaguetable" v-bind:key="item.position" >
                 <td>{{ item.position }}</td>
                 <td><img style="max-width: 20px; max-height: 20px;" v-bind:src="item.crestURI"></td>
                 <td>{{ item.teamName }}</td>
@@ -26,7 +27,8 @@
                 <td>{{ item.losses }}</td>
                 <th>{{ item.goalDifference }}</th>
                 <td>{{ item.goals }}</td>
-                <td>{{ item.goalsAgainst }}</td>           
+                <td>{{ item.goalsAgainst }}</td>    
+                <td>{{ item.points }}</td>       
             </tr>
             </tbody>
         </table>

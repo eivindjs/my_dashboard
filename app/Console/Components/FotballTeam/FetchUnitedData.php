@@ -19,8 +19,33 @@ class FetchUnitedData extends Command
         $year = Carbon::now()->format('Y');
         $team_data = Football::getTeamFixtures(66,$year,"n14");
         $data = array();
+
+        $dayes = array(
+            Carbon::SUNDAY => 'Søn',
+            Carbon::MONDAY => 'Man',
+            Carbon::TUESDAY => 'Tir',
+            Carbon::WEDNESDAY => 'Ons',
+            Carbon::THURSDAY => 'Tor',
+            Carbon::FRIDAY => 'Fri',
+            Carbon::SATURDAY => 'Lør'
+        );
+        $id = 0;
         foreach($team_data->fixtures as $fix){
-            $data[] = $fix;
+            $id++;
+            $away_team = json_decode(file_get_contents($fix->_links->awayTeam->href));
+            $home_team = json_decode(file_get_contents($fix->_links->homeTeam->href));
+            $dt = Carbon::createFromFormat("Y-m-d H:i",Carbon::parse($fix->date)->format('Y-m-d H:i'));
+            $data[] = array(
+                'id' => $id,
+                'date' => $dayes[$dt->dayOfWeek]  . " " . $dt->addHour()->format('d.m.Y H:i'),
+                'status' => $fix->status,
+                'homeTeamName' => $fix->homeTeamName,
+                'homeCrestURI' => $home_team->crestUrl,
+                'awayTeamName' => $fix->awayTeamName,
+                'awayCrestURI' => $away_team->crestUrl,
+                'result' => $fix->result,
+                'odds' => $fix->odds
+            );
         }
         event(new TeamDataFetched($data));
     }

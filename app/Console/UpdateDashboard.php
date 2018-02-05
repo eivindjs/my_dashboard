@@ -20,6 +20,7 @@ class UpdateDashboard extends Command
         //$this->call('dashboard:fetch-npm-totals');
         //$this->call('dashboard:fetch-tasks');
         $this->call('dashboard:fetch-league-table');
+        $this->call('dashboard:fetch-united-data');
         $this->call('dashboard:fetch-yr-data');
     }
 }
