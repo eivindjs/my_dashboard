@@ -1,7 +1,7 @@
 <template>
     <tile :position="position" modifiers="overflow">
         <section class="calendar">
-            <h1 class="calendar__title">Upcoming</h1>
+            <h1 class="calendar__title">Kommende</h1>
             <ul class="calendar__events">
                 <li v-for="event in events" v-bind:key="event" class="calendar__event">
                     <h2 class="calendar__event__title">{{ event.name }}</h2>

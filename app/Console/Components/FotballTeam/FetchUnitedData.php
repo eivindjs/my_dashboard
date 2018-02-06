@@ -17,7 +17,7 @@ class FetchUnitedData extends Command
     public function handle()
     {
         $year = Carbon::now()->format('Y');
-        $team_data = Football::getTeamFixtures(66,$year,"n14");
+        $team_data = Football::getTeamFixtures(66,$year,"n21");
         $data = array();
 
         $dayes = array(

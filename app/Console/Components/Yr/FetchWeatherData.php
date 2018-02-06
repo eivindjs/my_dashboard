@@ -16,16 +16,13 @@ class FetchWeatherData extends Command
 
     protected $description = 'Fetch weather data from yr';
 
-    private $xml_link = "https://www.yr.no/sted/Norge/Tr%C3%B8ndelag/Levanger/Levanger/varsel.xml";
+    private $xml_link = "http://www.yr.no/sted/Norge/Tr%C3%B8ndelag/Levanger/Levanger/varsel_time_for_time.xml";
 
     public function handle()
     {
         $yr_xml = file_get_contents($this->xml_link);
-        //$yr_xml =  Storage::get('yr_data.xml');
         $yr_xml = new \SimpleXMLElement($yr_xml);
         $now = Carbon::now()->format('Y-m-d H:i');
-        //Storage::disk('local')->put('yr_data.xml',$yr_xml);
-        //$yr_xml = simplexml_load_string($yr_xml);
         $yr_data = array();
         foreach($yr_xml->forecast->tabular->time as $time){
             $from_time = Carbon::parse($time['from'])->format('Y-m-d H:i');
