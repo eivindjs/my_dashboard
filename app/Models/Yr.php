@@ -220,4 +220,16 @@ class Yr extends Model {
         return false;
     }
 
+    public static function getSymbol($symbol=""){
+        $img = "";
+        $path = "dist" . DIRECTORY_SEPARATOR . "svg" . DIRECTORY_SEPARATOR;
+
+        if(!strlen($symbol))
+            return "";
+
+        $img = $path . $symbol . ".svg";
+
+        return $img;
+    }
+
 }
